@@ -2,18 +2,22 @@
 
 Sistem Pakar Diagnosa Penyakit Pada Ayam Menggunakan Metode Certainty Factor Berbasis Laravel.
 
+## ⚠️ Migrasi dari PHP Native ke Laravel
+
+Proyek ini telah berhasil dikonversi dari PHP native ke Laravel Framework 10.x dengan tetap mempertahankan semua fitur dan fungsionalitas asli.
+
 ## Requirements
 
 - PHP >= 8.1
 - Composer
-- MySQL / MariaDB
+- MySQL / MariaDB 5.7+
 - Node.js & NPM (optional, untuk asset compilation)
 
 ## Installation
 
 1. Clone repository ini
 ```bash
-git clone <repository-url>
+git clone https://github.com/GalangPutraMaulana19/chirex.git
 cd chirex
 ```
 
@@ -33,7 +37,8 @@ php artisan key:generate
 ```
 
 5. Konfigurasi database di file `.env`
-```
+```env
+APP_NAME=Chirexs
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -44,23 +49,48 @@ DB_PASSWORD=
 
 6. Buat database
 ```bash
-mysql -u root -p
-CREATE DATABASE spkayam;
-exit;
+mysql -u root -p -e "CREATE DATABASE spkayam CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
 ```
 
-7. Jalankan migration dan import data
+7. Jalankan migration
 ```bash
 php artisan migrate
+```
+
+8. Import data dari SQL file yang ada
+```bash
 mysql -u root -p spkayam < database/spkayam.sql
 ```
 
-8. Jalankan aplikasi
+9. Set permission untuk storage dan cache
+```bash
+chmod -R 775 storage bootstrap/cache
+```
+
+10. Jalankan aplikasi
 ```bash
 php artisan serve
 ```
 
 Aplikasi akan berjalan di `http://localhost:8000`
+
+## Quick Start untuk Development
+
+```bash
+# Install dependencies
+composer install
+
+# Setup environment
+cp .env.example .env
+php artisan key:generate
+
+# Setup database
+php artisan migrate
+mysql -u root -p spkayam < database/spkayam.sql
+
+# Run server
+php artisan serve
+```
 
 ## Default Login
 
