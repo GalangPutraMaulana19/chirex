@@ -1,131 +1,66 @@
-# Chirex.1.0
-> Sistem Pakar Diagnosa Penyakit Pada Ayam Menggunakan Metode Certainty Factor Berbasis Website Responsive.
->
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-## Donation
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-* Bagi yang ingin <b>berdonasi</b> untuk pengembangan sistem yang lain, boleh kirim ke saweria saya 
-   * Saweria.co : [Donasi Sekarang](https://saweria.co/januriawan)
-   * Siapapun, berapapun, saya ucapkan terimakasih sebanyak-banyaknya.
+## About Laravel
 
-## Berikut tampilan sistem yang di buat.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-* Home
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-![alt text](https://github.com/januriawan/Chirex.1.0/blob/master/Home%201.png)
-![alt text](https://github.com/januriawan/Chirex.1.0/blob/master/Home%202.png)
-![alt text](https://github.com/januriawan/Chirex.1.0/blob/master/Home%203.png)
-![alt text](https://github.com/januriawan/Chirex.1.0/blob/master/Home%205.png)
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-* Admin
+## Learning Laravel
 
-![alt text](https://github.com/januriawan/Chirex.1.0/blob/master/Admin%201.png)
-![alt text](https://github.com/januriawan/Chirex.1.0/blob/master/Admin%202.png)
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-## Configure
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-Gunakan XAMPP versi <b>PHP 7.4.9(*)</b> & <b>10.4.14-MariaDB</b> : setting nama database anda di file config.php 
-```<?php
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "spkayam";
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-mysql_connect($server,$username,$password) or die("Koneksi gagal");
-mysql_select_db($database) or die("Maaf, Database tidak bisa dibuka");
-?>
-```
-Login dengan /chirex/formlogin 
-Username : <b>admin</b> 
-Password : <b>admin</b>
-## Formula yang digunakan:
-```
-Posted by totoharyanto on November 25th, 2011 / totoharyanto.staff.ipb.ac.id/2011/11/25/certainty-factor-cf/
+## Laravel Sponsors
 
-Certainty Factor (CF) merupakan salah satu teknik yang digunakan untuk mengatasi ketidakpastian dalam pengambilan keputusan. Certainty Factor (CF) dapat terjadi dengan berbagai kondisi. 
-Diantara kondisi yang terjadi adalah terdapat beberapa antensenden (dalam rule yang berbeda) dengan satu konsekuen yang sama. 
-Dalam kasus ini, kita harus mengagregasikan nilai CF keseluruhan dari setiap kondisi yang ada. Berikut formula yang digunakan:
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-CFc (CF1,CF2) = CF1 + CF2 (1- CF1)                            ; jika CF1 dan CF2 keduanya posistif
+### Premium Partners
 
-CFc (CF1,CF2) = CF1 + CF2 (1+ CF1)                            ; jika CF1 dan CF2 keduanya negative
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[WebReinvent](https://webreinvent.com/)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Jump24](https://jump24.co.uk)**
+- **[Redberry](https://redberry.international/laravel/)**
+- **[Active Logic](https://activelogic.com)**
+- **[byte5](https://byte5.de)**
+- **[OP.GG](https://op.gg)**
 
-CFc (CF1,CF2) = {CF1 + CF2} / (1-min{| CF1|,| CF2|})          ; jika salah satu negatif
+## Contributing
 
-Contoh :
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-[R1] : IF fever THEN thypus {cf : -0.40}
+## Code of Conduct
 
-[R2] : IF amount of tromobsit low THEN thypus {cf : -0.50}
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-[R3] : IF body is weak THEN thypus {cf : 0.75}
+## Security Vulnerabilities
 
-[R4] :IF diarhea THEN thypus {cf : 0.60}
-
-Tentukan Nilai dari CF gabungannya:
-
-Jawab:
-1.R1 dan R2 ::  CFc (CF1,CF2) = CF1 + CF2 (1+ CF1)
-
-= -0,40 + (-0,50)(1+(-0,40))
-
-= -0,40 + (-0,50)(0,60)
-
-= -0,40 – 0,30
-
-= -0,70  ………………………..………………………………….(a)
-
-2. R3 dan R4 :: CFc (CF1,CF2) = CF1 + CF2 (1- CF1)
-
-= 0,75 + 0,6 (1-0,75)
-
-= 0,75 + 0,6. 0,25
-
-= 0,75 + 0,15
-
-= 0,9 …………………………………………………..(b)
-
-3.Gabungkan (a) dan (b) :: CFc (CF1,CF2) = {CF1 + CF2} / (1-min{| CF1|,| CF2|})
-
-= {-0,70+0,9}/(1-min{|-0,70|,|0,90|})
-
-= 0,20 / ( 1-{0,70})
-
-= 0,20 / 0,30
-
-= 0,67
-
-Kesimpulannya: Suatu penyakit thypus disebabkan oleh gejala-gejala 
-tersebut di atas memiliki nilai Certainty Factor ( CF) sebesar 0,67
-```
-
-## Usage example
-
-Semoga hasil karya ini dapat berguna serta bermanfaat bagi perkembangan Teknologi dan Informasi pada khususnya. Serta sebagai kajian bagi mahasiswa dalam pengambilan skripsi.
-
-## Release History
-
-* 0.0.1
-    * Work in progress
-    
- * 0.0.2
-    * Updated to Php.7 by https://github.com/triannoviandi
-    
- * 0.0.3
-    * Bug Fix Update
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
-Copyright – [@januriawan](https://twitter.com/januriawan) – januriawan@duck.com
-
-Distributed under the XYZ license. See ``LICENSE`` for more information.
-
-[https://github.com/januriawan](https://github.com/januriawan/)
-
-## Disclaimer & Documentation
-
-* Dilarang keras di perjual-belikan, source ini saya publikasi untuk keperluan belajar saja.
-    * Untuk yang mau file dokumentasi / skripsi bisa request dengan menghubungi saya (gratis).
-    * <b>Update</b> (Karena banyak yang meminta via Email, Sosmed dll. Mohon maaf karena keterbatasan waktu saya tidak bisa membalas, satu persatu
-    untuk itu silakan <b>download</b> di [Link Ini](https://www.scribd.com/document/431280343/Dokumentasi-Sistem-Pakar-Ayam-Skripsi)
-
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
